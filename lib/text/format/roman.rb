@@ -1,38 +1,40 @@
-  # Provides a numbering object that will produce numbers. Accepts three
-  # parameters for numbering that will control how the numbers are presented
-  # when given as #[](index).
-  #
-  # <tt>:offset</tt>::  The number to add to the index in order to produce
-  #                     the proper index. This is because #tag_text indexes
-  #                     from 0, not 1. This defaults to 1. Any value less
-  #                     than 1 will be set to 1 (because Romans did not know
-  #                     about zero or negative numbers).
-  # <tt>:lower</tt>::   Renders the Roman numerals in lowercase if +true+.
-  #                     Defaults to +false+.
-  # <tt>:postfix</tt>:: The value that will be appended to the number
-  #                     presented by #[]. Defaults to +nil+.
-  # <tt>:prefix</tt>::  The value that will be prepended to the number
-  #                     presented by #[]. Defaults to +nil+.
-  #
-  #   r1 = Text::Format::Roman.new(:postfix => ".")
-  #   puts r1[0]  # => "I."
-  #   puts r1[8]  # => "IX.
-  #
-  #   r2 = Text::Format::Roman.new(:prefix => "M.")
-  #   puts r2[0]  # => "M.I"
-  #   puts r2[8]  # => "M.IX"
-  #
-  #   r3 = Text::Format::Roman.new(:offset => 3)
-  #   puts r3[0]  # => "III"
-  #   puts r3[9]  # => "XII"
-  #
-  #   r4 = Text::Format::Roman.new(:offset => 0)
-  #   puts r4[0]  # => "I"
-  #   puts r4[8]  # => "IX"
-  #
-  #   r5 = Text::Format::Roman.new(:lower => true)
-  #   puts r5[0]  # => "i"
-  #   puts r5[8]  # => "ix"
+# -*- ruby encoding: utf-8 -*-
+
+# Provides a numbering object that will produce numbers. Accepts three
+# parameters for numbering that will control how the numbers are presented
+# when given as #[](index).
+#
+# <tt>:offset</tt>::  The number to add to the index in order to produce
+#                     the proper index. This is because #tag_text indexes
+#                     from 0, not 1. This defaults to 1. Any value less
+#                     than 1 will be set to 1 (because Romans did not know
+#                     about zero or negative numbers).
+# <tt>:lower</tt>::   Renders the Roman numerals in lowercase if +true+.
+#                     Defaults to +false+.
+# <tt>:postfix</tt>:: The value that will be appended to the number
+#                     presented by #[]. Defaults to +nil+.
+# <tt>:prefix</tt>::  The value that will be prepended to the number
+#                     presented by #[]. Defaults to +nil+.
+#
+#   r1 = Text::Format::Roman.new(:postfix => ".")
+#   puts r1[0]  # => "I."
+#   puts r1[8]  # => "IX.
+#
+#   r2 = Text::Format::Roman.new(:prefix => "M.")
+#   puts r2[0]  # => "M.I"
+#   puts r2[8]  # => "M.IX"
+#
+#   r3 = Text::Format::Roman.new(:offset => 3)
+#   puts r3[0]  # => "III"
+#   puts r3[9]  # => "XII"
+#
+#   r4 = Text::Format::Roman.new(:offset => 0)
+#   puts r4[0]  # => "I"
+#   puts r4[8]  # => "IX"
+#
+#   r5 = Text::Format::Roman.new(:lower => true)
+#   puts r5[0]  # => "i"
+#   puts r5[8]  # => "ix"
 class Text::Format::Roman
   def [](index)
     roman = ""
@@ -95,10 +97,10 @@ class Text::Format::Roman
   end
 
   def initialize(options = {})
-    @offset   = options[:offset].to_i || 1
-    @lower    = options[:lower]       || false
-    @postfix  = options[:postfix]     || nil
-    @prefix   = options[:prefix]      || nil
+    @offset   = options.fetch(:offset, 1).to_i
+    @lower    = options.fetch(:lower, false)
+    @postfix  = options.fetch(:postfix, nil)
+    @prefix   = options.fetch(:prefix, nil)
 
     @offset   = 1 if @offset < 1
   end

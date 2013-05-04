@@ -2,9 +2,9 @@
 
 Gem::Specification.new do |s|
   s.name = "text-format"
-  s.version = "0.borked"
+  s.version = "1.0.0"
 
-  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Austin Ziegler"]
   s.cert_chain = ["/Users/AZiegler/.gem/gem-public_cert.pem"]
   s.date = "2013-05-04"

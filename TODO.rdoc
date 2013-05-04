@@ -1,5 +1,5 @@
-Text::Format To Do
-==================
+== Text::Format To Do
+
 * Margin markers: the ability to place markers in the margin when
   formatting.
 * Line numbering: the ability to number lines in the margin when

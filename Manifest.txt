@@ -1,0 +1,17 @@
+.gemtest
+.hoerc
+.travis.yml
+Contributing.rdoc
+History.rdoc
+Licence.rdoc
+README.rdoc
+Rakefile
+TODO.rdoc
+docs/COPYING.txt
+docs/artistic.txt
+lib/text/format.rb
+lib/text/format/alpha.rb
+lib/text/format/number.rb
+lib/text/format/roman.rb
+test/tc_text_format.rb
+test/testall.rb

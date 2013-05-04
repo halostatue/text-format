@@ -1,0 +1,22 @@
+= Text::Format 1.0.0
+
+home :: http://text-format.rubyforge.org
+code :: https://github.com/halostatue/text-format
+bugs :: https://github.com/halostatue/text-format/issues
+rdoc :: http://text-format.rubyforge.org/
+code climate :: {<img src="https://codeclimate.com/github/halostatue/text-format.png" />}[https://codeclimate.com/github/halostatue/text-format]
+continuous integration :: {<img src="https://travis-ci.org/halostatue/text-format.png" />}[https://travis-ci.org/halostatue/text-format]
+
+== Description
+
+Text::Format is provides the ability to nicely format fixed-width text with
+knowledge of the writeable space (number of columns), margins, and indentation
+settings. Text::Format can work with either TeX::Hyphen or Text::Hyphen to
+hyphenate words when formatting.
+
+This is release 1.0, containing both feature enhancements and bug fixes over
+the previous version, 0.64.
+
+:include: Contributing.rdoc
+
+:include: Licence.rdoc

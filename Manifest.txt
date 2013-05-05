@@ -4,6 +4,7 @@
 Contributing.rdoc
 History.rdoc
 Licence.rdoc
+Manifest.txt
 README.rdoc
 Rakefile
 TODO.rdoc
@@ -13,5 +14,4 @@ lib/text/format.rb
 lib/text/format/alpha.rb
 lib/text/format/number.rb
 lib/text/format/roman.rb
-test/tc_text_format.rb
-test/testall.rb
+test/test_text_format.rb

@@ -1,9 +1,11 @@
+# -*- ruby encoding: utf-8 -*-
+
 $LOAD_PATH.unshift("#{File.dirname(__FILE__)}/../lib") if __FILE__ == $0
 
 require 'text/format'
-require 'test/unit'
+require 'minitest/autorun'
 
-class TestText__Format < Test::Unit::TestCase
+class TestText_Format < MiniTest::Unit::TestCase
   attr_accessor :format_o
 
   GETTYSBURG = <<-'EOS'
@@ -157,7 +159,7 @@ class TestText__Format < Test::Unit::TestCase
 
     @format_o.tag_paragraph = true
     assert_equal(true, @format_o.tag_paragraph)
-    assert_not_equal(@format_o.paragraphs([GETTYSBURG, GETTYSBURG]),
+    refute_equal(@format_o.paragraphs([GETTYSBURG, GETTYSBURG]),
                       Text::Format.new.paragraphs([GETTYSBURG, GETTYSBURG]))
   end
 
@@ -170,9 +172,9 @@ class TestText__Format < Test::Unit::TestCase
     @format_o.tag_paragraph = true
     @format_o.tag_text = ["Gettysburg Address", "---"]
 
-    assert_not_equal(@format_o.format(GETTYSBURG), Text::Format.new.format(GETTYSBURG))
-    assert_not_equal(@format_o.paragraphs([GETTYSBURG, GETTYSBURG]), Text::Format.new.paragraphs([GETTYSBURG, GETTYSBURG]))
-    assert_not_equal(@format_o.paragraphs([GETTYSBURG, GETTYSBURG, GETTYSBURG]), Text::Format.new.paragraphs([GETTYSBURG, GETTYSBURG, GETTYSBURG]))
+    refute_equal(@format_o.format(GETTYSBURG), Text::Format.new.format(GETTYSBURG))
+    refute_equal(@format_o.paragraphs([GETTYSBURG, GETTYSBURG]), Text::Format.new.paragraphs([GETTYSBURG, GETTYSBURG]))
+    refute_equal(@format_o.paragraphs([GETTYSBURG, GETTYSBURG, GETTYSBURG]), Text::Format.new.paragraphs([GETTYSBURG, GETTYSBURG, GETTYSBURG]))
   end
 
   def test_justify?

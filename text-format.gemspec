@@ -2,16 +2,16 @@
 
 Gem::Specification.new do |s|
   s.name = "text-format"
-  s.version = "1.0.0"
+  s.version = "1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Austin Ziegler"]
   s.cert_chain = ["/Users/AZiegler/.gem/gem-public_cert.pem"]
-  s.date = "2013-05-04"
+  s.date = "2013-05-05"
   s.description = "Text::Format is provides the ability to nicely format fixed-width text with\nknowledge of the writeable space (number of columns), margins, and indentation\nsettings. Text::Format can work with either TeX::Hyphen or Text::Hyphen to\nhyphenate words when formatting.\n\nThis is release 1.0, containing both feature enhancements and bug fixes over\nthe previous version, 0.64.\n\n:include: Contributing.rdoc\n\n:include: Licence.rdoc"
   s.email = ["austin@rubyforge.org"]
-  s.extra_rdoc_files = ["Contributing.rdoc", "History.rdoc", "Licence.rdoc", "README.rdoc", "TODO.rdoc", "docs/COPYING.txt", "docs/artistic.txt", "Contributing.rdoc", "History.rdoc", "Licence.rdoc", "README.rdoc", "TODO.rdoc"]
-  s.files = [".gemtest", ".hoerc", ".travis.yml", "Contributing.rdoc", "History.rdoc", "Licence.rdoc", "README.rdoc", "Rakefile", "TODO.rdoc", "docs/COPYING.txt", "docs/artistic.txt", "lib/text/format.rb", "lib/text/format/alpha.rb", "lib/text/format/number.rb", "lib/text/format/roman.rb", "test/tc_text_format.rb", "test/testall.rb"]
+  s.extra_rdoc_files = ["Contributing.rdoc", "History.rdoc", "Licence.rdoc", "Manifest.txt", "README.rdoc", "TODO.rdoc", "docs/COPYING.txt", "docs/artistic.txt", "Contributing.rdoc", "History.rdoc", "Licence.rdoc", "README.rdoc", "TODO.rdoc"]
+  s.files = [".gemtest", ".hoerc", ".travis.yml", "Contributing.rdoc", "History.rdoc", "Licence.rdoc", "Manifest.txt", "README.rdoc", "Rakefile", "TODO.rdoc", "docs/COPYING.txt", "docs/artistic.txt", "lib/text/format.rb", "lib/text/format/alpha.rb", "lib/text/format/number.rb", "lib/text/format/roman.rb", "test/test_text_format.rb"]
   s.homepage = "http://text-format.rubyforge.org"
   s.licenses = ["MIT", "Artistic 2.0", "GPL-2"]
   s.rdoc_options = ["--main", "README.rdoc"]
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.25"
   s.signing_key = "/Users/AZiegler/.gem/gem-private_key.pem"
   s.summary = "Text::Format is provides the ability to nicely format fixed-width text with knowledge of the writeable space (number of columns), margins, and indentation settings"
+  s.test_files = ["test/test_text_format.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

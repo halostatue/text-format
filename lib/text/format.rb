@@ -78,9 +78,9 @@ class Text::Format
   # object; if there is no hyphenation library supplied, then the hyphenator
   # of Text::Format itself is used, which is the same as SPLIT_CONTINUATION.
   # See #hyphenator for more information about hyphenation libraries. The
-  # example below is valid with either TeX::Hyphen or Text::Hyphen. If the
-  # word cannot be split using the hyphenator's rules, and the word will not
-  # fit wholly into the next line, then SPLIT_FIXED will be used.
+  # example below is valid with Text::Hyphen. If the word cannot be split
+  # using the hyphenator's rules, and the word will not fit wholly into the
+  # next line, then SPLIT_FIXED will be used.
   #
   #       rep-
   #       re-
@@ -99,8 +99,8 @@ class Text::Format
   # object; if there is no hyphenation library supplied, then the hyphenator
   # of Text::Format itself is used, which is the same as SPLIT_CONTINUATION.
   # See #hyphenator for more information about hyphenation libraries. The
-  # example below is valid with either TeX::Hyphen or Text::Hyphen. If the
-  # word cannot be split using the hyphenator's rules, then SPLIT_FIXED will
+  # example below is valid with Text::Hyphen. If the word cannot be split
+  # using the hyphenator's rules, then SPLIT_FIXED will
   # be used.
   SPLIT_HYPHENATION_FIXED         = SPLIT_HYPHENATION | SPLIT_FIXED
   # Attempts to split words according to the rules of the supplied

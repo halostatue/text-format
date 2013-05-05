@@ -11,8 +11,8 @@ continuous integration :: {<img src="https://travis-ci.org/halostatue/text-forma
 
 Text::Format is provides the ability to nicely format fixed-width text with
 knowledge of the writeable space (number of columns), margins, and indentation
-settings. Text::Format can work with either TeX::Hyphen or Text::Hyphen to
-hyphenate words when formatting.
+settings. Text::Format can work with Text::Hyphen to hyphenate words when
+formatting.
 
 This is release 1.0, containing both feature enhancements and bug fixes over
 the previous version, 0.64.

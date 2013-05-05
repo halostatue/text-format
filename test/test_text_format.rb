@@ -441,19 +441,8 @@ class TestText_Format < MiniTest::Unit::TestCase
       require 'text/hyphen'
       hy = Text::Hyphen.new
     rescue LoadError
-      begin
-        require 'rubygems'
-        require 'text/hyphen'
-        hy = Text::Hyphen.new
-      rescue LoadError
-        begin
-          require 'tex/hyphen'
-          hy = TeX::Hyphen.new
-        rescue LoadError
-          print 'S'
-          return true
-        end
-      end
+      print 'S'
+      return true
     end
 
     tx = "something pancakes electroencephalogram"

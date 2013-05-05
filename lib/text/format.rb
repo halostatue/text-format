@@ -651,9 +651,9 @@ class Text::Format
       end
     end
 
-    text.join('')
+    text.join
   end
-  alias format format_one_paragraph
+  alias_method :format, :format_one_paragraph
 
   # Considers each element of text (provided or internal) as a paragraph. If
   # #first_indent is the same as #body_indent, then paragraphs will be
@@ -685,31 +685,31 @@ class Text::Format
       @tag_cur = @tag_text[cnt] if @tag_paragraph
       @tag_cur = '' if @tag_cur.nil?
       line = format(tw)
-      ret << "#{line}#{p_end}" if (not line.nil?) and (line.size > 0)
+      ret << (line + p_end) if (not line.nil?) and (line.size > 0)
       cnt += 1
     end
 
     ret[-1].chomp! unless ret.empty?
-    ret.join('')
+    ret.join
   end
 
   # Centers the text, preserving empty lines and tabs.
-  def center(to_center = nil)
-    to_center = @text if to_center.nil?
-    to_center = [to_center].flatten
+  def center(to_center = @text)
+    to_center = [ to_center ].flatten
 
-    tabs = 0
-    width = @columns - @left_margin - @right_margin
+    tabs     = 0
+    width    = @columns - @left_margin - @right_margin
     centered = []
+
     to_center.each do |tc|
-      s = tc.strip
-      tabs = s.count(TAB)
-      tabs = 0 if tabs.nil?
-      ct = ((width - s.size - (tabs * @tabstop) + tabs) / 2)
-      ct = (width - @left_margin - @right_margin) - ct
-      centered << "#{s.rjust(ct)}\n"
+      stripped   = tc.strip
+      tabs       = stripped.count(TAB) || 0
+      line_width = ((width - stripped.size - (tabs * @tabstop) + tabs) / 2)
+      center_to  = (width - @left_margin - @right_margin) - line_width
+      centered << (stripped.rjust(center_to) + NEWLINE)
     end
-    centered.join('')
+
+    centered.join
   end
 
   # Replaces all tab characters in the text with #tabstop spaces.

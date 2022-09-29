@@ -3,20 +3,15 @@
 require "rubygems"
 require "hoe"
 
-Hoe.plugin :bundler
 Hoe.plugin :doofus
 Hoe.plugin :email
 Hoe.plugin :gemspec2
 Hoe.plugin :git
-Hoe.plugin :rubyforge
 Hoe.plugin :minitest
 Hoe.plugin :travis
 
 spec = Hoe.spec "text-format" do
-  developer("Austin Ziegler", "austin@rubyforge.org")
-
-  self.remote_rdoc_dir = "."
-  rsync_args << " --exclude=statsvn/"
+  developer("Austin Ziegler", "halostatue@gmail.com")
 
   self.history_file = "History.rdoc"
   self.readme_file = "README.rdoc"
